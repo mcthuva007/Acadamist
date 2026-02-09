@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Convert your images to PDF instantly with our modern, easy-to-use image to PDF converter. Support for multiple images, drag-and-drop upload, and instant downloads.">
+    <meta name="keywords" content="image to pdf, pdf converter, image converter, jpg to pdf, png to pdf">
+    <title>ACADAMIST - Image to PDF & PDF to Word</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/docx@8.5.0/build/index.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mammoth@1.6.0/mammoth.browser.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+
+<body>
+
+    <!-- Reveal Overlay -->
+    <div class="reveal-overlay">
+        <div class="reveal-content">
+            <h1 class="reveal-text">ACADAMIST</h1>
+            <div class="reveal-subtext">Developed By Thuva</div>
+        </div>
+    </div>
+
+
+    <header>
+        <div class="container">
+            <h1 class="logo">
+
+                ACADAMIST
+            </h1>
+            <p class="tagline">Convert between multiple file formats instantly</p>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <!-- Mode Selector -->
+            <section class="mode-selector">
+                <div class="mode-tabs">
+                    <button class="mode-tab active" data-mode="image-to-pdf">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="2" y="2" width="16" height="16" rx="2" stroke="currentColor" stroke-width="1.5" />
+                            <circle cx="7" cy="7" r="2" stroke="currentColor" stroke-width="1.5" />
+                            <path d="M2 14L6 10L10 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                        Image to PDF
+                    </button>
+                    <button class="mode-tab" data-mode="word-to-pdf">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4 2H12L16 6V18H4V2Z" stroke="currentColor" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M12 2V6H16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M7 10L8.5 14L10 10M10 10L11.5 14L13 10" stroke="currentColor" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                        Word to PDF
+                    </button>
+                    <button class="mode-tab" data-mode="pptx-to-pdf">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="3" y="3" width="14" height="14" rx="1" stroke="currentColor" stroke-width="1.5" />
+                            <rect x="6" y="6" width="8" height="5" stroke="currentColor" stroke-width="1.5" />
+                            <path d="M6 13H14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                        </svg>
+                        PPTX to PDF
+                    </button>
+                </div>
+            </section>
+            <section class="upload-section">
+                <div class="upload-card glass-card">
+                    <div class="upload-area" id="uploadArea">
+                        <div class="upload-icon">
+                            <svg width="64" height="64" viewBox="0 0 64 64" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="32" cy="32" r="30" stroke="white" stroke-width="2" stroke-dasharray="4 4" />
+                                <path d="M32 20V44M20 32H44" stroke="white" stroke-width="3" stroke-linecap="round" />
+                            </svg>
+                        </div>
+                        <h2>Drop images here</h2>
+                        <p>or click to browse</p>
+                        <p class="file-types">Supports: JPG, PNG, WebP, GIF</p>
+                        <input type="file" id="fileInput" accept="image/*" multiple hidden>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PDF Upload Section -->
+            <section class="upload-section pdf-upload-section" style="display: none;">
+                <div class="upload-card glass-card">
+                    <div class="upload-area" id="pdfUploadArea">
+                        <div class="upload-icon">
+                            <svg width="64" height="64" viewBox="0 0 64 64" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M16 16H38L48 26V48H16V16Z" stroke="white" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M38 16V26H48" stroke="white" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path d="M24 36H40M24 42H40" stroke="white" stroke-width="2" stroke-linecap="round" />
+                            </svg>
+                        </div>
+                        <h2>Drop PDF file here</h2>
+                        <p>or click to browse</p>
+                        <p class="file-types">Supports: PDF files only</p>
+                        <input type="file" id="pdfFileInput" accept=".pdf" hidden>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PDF Preview Section -->
+            <section class="pdf-preview-section" id="pdfPreviewSection" style="display: none;">
+                <div class="pdf-preview-card glass-card">
+                    <div class="pdf-info">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 12H28L36 20V36H12V12Z" stroke="white" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M28 12V20H36" stroke="white" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                        <div class="pdf-details">
+                            <h3 id="pdfFileName">document.pdf</h3>
+                            <p id="pdfPageCount">0 pages</p>
+                        </div>
+                        <button class="remove-pdf-btn" id="removePdfBtn">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M15 5L5 15M5 5L15 15" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="preview-section" id="previewSection">
+                <div class="preview-header">
+                    <h2>Your Images</h2>
+                    <p class="image-count" id="imageCount">0 images</p>
+                </div>
+                <div class="preview-grid" id="previewGrid"></div>
+            </section>
+
+            <section class="actions-section" id="actionsSection">
+                <div class="actions-card glass-card">
+                    <button class="btn btn-primary" id="convertBtn">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4 4H12L16 8V16H4V4Z" stroke="currentColor" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M12 4V8H16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                        Convert to PDF
+                    </button>
+                    <button class="btn btn-secondary" id="clearBtn">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M15 5L5 15M5 5L15 15" stroke="currentColor" stroke-width="1.5"
+                                stroke-linecap="round" />
+                        </svg>
+                        Clear All
+                    </button>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Filename Rename Modal -->
+    <div class="modal-overlay" id="filenameModal" style="display: none;">
+        <div class="modal-card glass-card">
+            <h2>Save File As</h2>
+            <div class="modal-body">
+                <label for="filenameInput">Filename:</label>
+                <input type="text" id="filenameInput" class="filename-input" placeholder="Enter filename">
+                <p class="file-extension" id="fileExtension">.pdf</p>
+            </div>
+            <div class="modal-actions">
+                <button class="btn btn-secondary" id="cancelFilename">Cancel</button>
+                <button class="btn btn-primary" id="confirmFilename">Download</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Word Upload Section -->
+    <section class="upload-section word-upload-section" style="display: none;">
+        <div class="container">
+            <div class="upload-card glass-card">
+                <div class="upload-area" id="wordUploadArea">
+                    <div class="upload-icon">
+                        <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M16 8H38L48 18V56H16V8Z" stroke="white" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M38 8V18H48" stroke="white" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M24 30L28 42L32 30M32 30L36 42L40 30\" stroke=\"white\" stroke-width=\"2\"
+                                stroke-linecap=\"round\" stroke-linejoin=\"round\" />
+                        </svg>
+                    </div>
+                    <h2>Drop Word file here</h2>
+                    <p>or click to browse</p>
+                    <p class="file-types">Supports: DOCX, DOC files</p>
+                    <input type="file" id="wordFileInput" accept=".docx,.doc" hidden>
+                </div>
+            </div>
+
+            <!-- Word Preview Section -->
+            <section class="pdf-preview-section" id="wordPreviewSection" style="display: none;">
+                <div class="pdf-preview-card glass-card">
+                    <div class="pdf-info">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 6H28L36 14V42H12V6Z" stroke="white" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M28 6V14H36" stroke="white" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                        <div class="pdf-details">
+                            <h3 id="wordFileName">document.docx</h3>
+                            <p id="wordFileSize">0 KB</p>
+                        </div>
+                        <button class="remove-pdf-btn" id="removeWordBtn">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M15 5L5 15M5 5L15 15" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </section>
+
+    <!-- PPTX Upload Section -->
+    <section class="upload-section pptx-upload-section" style="display: none;">
+        <div class="container">
+            <div class="upload-card glass-card">
+                <div class="upload-area" id="pptxUploadArea">
+                    <div class="upload-icon">
+                        <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="12" y="12" width="40" height="40" rx="2" stroke="white" stroke-width="2" />
+                            <rect x="18" y="18" width="28" height="16" stroke="white" stroke-width="2" />
+                            <path d="M18 38H46" stroke="white" stroke-width="2" stroke-linecap="round" />
+                        </svg>
+                    </div>
+                    <h2>Drop PowerPoint file here</h2>
+                    <p>or click to browse</p>
+                    <p class="file-types">Supports: PPTX, PPT files</p>
+                    <input type="file" id="pptxFileInput" accept=".pptx,.ppt" hidden>
+                </div>
+            </div>
+
+            <!-- PPTX Preview Section -->
+            <section class="pdf-preview-section" id="pptxPreviewSection" style="display: none;">
+                <div class="pdf-preview-card glass-card">
+                    <div class="pdf-info">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="8" y="8" width="32" height="32" rx="2" stroke="white" stroke-width="2" />
+                            <rect x="14" y="14" width="20" height="12" stroke="white" stroke-width="2" />
+                        </svg>
+                        <div class="pdf-details">
+                            <h3 id="pptxFileName">presentation.pptx</h3>
+                            <p id="pptxFileSize">0 KB</p>
+                        </div>
+                        <button class="remove-pdf-btn" id="removePptxBtn">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M15 5L5 15M5 5L15 15" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </section>
+
+    <div class="toast" id="toast">
+        <span id="toastMessage"></span>
+    </div>
+
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner">
+            <div class="spinner"></div>
+            <p>Converting to PDF...</p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; Devoloped By Thuva </p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

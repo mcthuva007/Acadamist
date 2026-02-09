@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acadamist Compiler</title>
+    <!-- CodeMirror Assets -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/eclipse.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/monokai.min.css">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Reveal Overlay -->
+    <div class="reveal-overlay">
+        <div class="reveal-content">
+            <h1 class="reveal-text">ACADAMIST</h1>
+            <div class="reveal-subtext">Developed By Thuva</div>
+        </div>
+    </div>
+
+    <div class="app-container">
+        <header class="header">
+            <div class="branding">
+                <h1 class="logo">ACADAMIST</h1>
+                <p class="subtitle">Developed by Thuva</p>
+            </div>
+            <div class="controls">
+                <div class="custom-dropdown" id="language-dropdown">
+                    <button class="dropdown-toggle" id="dropdown-toggle">
+                        <span class="selected-language">PYTHON</span>
+                        <svg class="dropdown-arrow" width="12" height="8" viewBox="0 0 12 8" fill="none">
+                            <path d="M1 1L6 6L11 1" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                    <div class="dropdown-menu" id="dropdown-menu">
+                        <div class="dropdown-item" data-value="python">Python</div>
+                        <div class="dropdown-item" data-value="cpp">C++</div>
+                        <div class="dropdown-item" data-value="java">Java</div>
+                        <div class="dropdown-item" data-value="c">C</div>
+                        <div class="dropdown-item" data-value="sql">MySQL</div>
+                        <div class="dropdown-item" data-value="html">HTML</div>
+                    </div>
+                </div>
+                <button id="download-btn" class="run-btn">DOWNLOAD</button>
+                <button id="run-btn" class="run-btn">RUN</button>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <div class="editor-pane">
+                <div class="pane-header">CODE</div>
+                <textarea id="code-editor"></textarea>
+            </div>
+            <div class="output-pane">
+                <div class="pane-header">OUTPUT</div>
+                <div id="output-container" class="output-container">
+                    <pre id="output-console"></pre>
+                    <iframe id="output-frame" class="output-frame hidden"></iframe>
+                    <div id="loader" class="loader hidden"></div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- CodeMirror Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/python/python.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/clike/clike.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/xml/xml.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/javascript/javascript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/css/css.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/htmlmixed/htmlmixed.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/sql/sql.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/addon/edit/closebrackets.min.js"></script>
+
+    <!-- Custom Script -->
+    <script src="script.js"></script>
+</body>
+
+</html>

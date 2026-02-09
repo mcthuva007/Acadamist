@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+
+    <title>Acadamist - Your Academic Hub</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+</head>
+
+<body>
+
+    <!-- Reveal Overlay -->
+    <div class="reveal-overlay">
+        <div class="reveal-content">
+            <h1 class="reveal-text">ACADAMIST</h1>
+            <div class="reveal-subtext">Developed By Thuva</div>
+        </div>
+    </div>
+
+    <!-- Bubble Animation Container - REMOVED FOR PERFORMANCE -->
+
+    <!-- Background Atmospherics - REMOVED FOR PERFORMANCE -->
+
+    <div class="app-container">
+        <!-- Header -->
+        <header>
+            <div class="logo-container">
+                <div class="logo">ACADAMIST</div>
+                <div class="logo-subtext">Developed By Thuva</div>
+            </div>
+        </header>
+
+        <!-- Main Calendar Section -->
+        <section class="calendar-section glass-panel">
+            <div class="calendar-header">
+                <h2 class="month-title">January 2026</h2>
+                <div class="calendar-controls">
+                    <button class="btn btn-secondary" id="prevMonth" aria-label="Previous month">&lt;</button>
+                    <button class="btn btn-secondary" id="nextMonth" aria-label="Next month">&gt;</button>
+                </div>
+            </div>
+
+            <div class="day-names-row"
+                style="display: grid; grid-template-columns: repeat(7, 1fr); text-align: center; margin-bottom: 10px;">
+                <div class="day-name">Sun</div>
+                <div class="day-name">Mon</div>
+                <div class="day-name">Tue</div>
+                <div class="day-name">Wed</div>
+                <div class="day-name">Thu</div>
+                <div class="day-name">Fri</div>
+                <div class="day-name">Sat</div>
+            </div>
+
+            <div class="calendar-grid">
+                <!-- Days will be injected here by JS -->
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact-section glass-panel">
+            <h3 class="fun-title">Contact Me</h3>
+            <br>
+            <img src="assets/Thuva.png" alt="Profile" class="profile-pic">
+            <br>
+            <h2>Thuvaragan</h2>
+            <p style="color: var(--text-muted); margin-bottom: 1rem; font-size: 0.9rem;">
+                Aspiring Developer,Content Creator,Editor And Musician<br>Let's connect!
+            </p>
+            <div class="social-links">
+                <a href="https://www.instagram.com/mc_thuva/?hl=en" class="social-btn insta" aria-label="Instagram">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                    </svg>
+                </a>
+                <a href="https://www.youtube.com/@mcvisuals_25" class="social-btn youtube" aria-label="YouTube">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                            d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.46 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.33 29 29 0 0 0-.46-5.33z">
+                        </path>
+                        <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+                    </svg>
+                </a>
+                <a href="https://www.linkedin.com/in/thuvaragan-rathikumar-0a42031ab/" class="social-btn linkedin"
+                    aria-label="LinkedIn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                        <rect x="2" y="9" width="4" height="12"></rect>
+                        <circle cx="4" cy="4" r="2"></circle>
+                    </svg>
+                </a>
+                <a href="mailto:mcofficial2025@gmail.com" class="social-btn mail" aria-label="Email">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                        <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                </a>
+            </div>
+        </section>
+
+        <!-- Sidebar (Timer & Materials) -->
+        <aside class="sidebar">
+
+            <!-- Pomodoro Timer -->
+            <div class="glass-panel timer-widget">
+                <h3>Focus Timer</h3>
+                <div class="time-display">25:00</div>
+
+                <div class="slider-container">
+                    <input type="range" min="1" max="60" value="25" class="time-slider" id="timeSlider">
+                </div>
+
+                <div class="timer-controls">
+                    <button class="btn" id="startTimer">Start</button>
+                    <button class="btn btn-secondary" id="resetTimer">Reset</button>
+                </div>
+            </div>
+
+            <!-- Premium Upcoming Events Button -->
+            <button id="upcomingEventsBtn" class="btn" style="
+                width: 100%;
+                background: rgba(255, 255, 255, 0.03);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                border-radius: 16px;
+                padding: 1rem;
+                color: var(--text-main);
+                margin-bottom: 1rem; 
+                display: flex; 
+                align-items: center; 
+                justify-content: center; 
+                gap: 0.75rem; 
+                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+                font-weight: 500;
+                letter-spacing: 0.5px;
+                box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            " onmouseover="this.style.background='rgba(255, 255, 255, 0.08)'; this.style.borderColor='rgba(255, 255, 255, 0.2)'; this.style.transform='translateY(-2px)';"
+                onmouseout="this.style.background='rgba(255, 255, 255, 0.03)'; this.style.borderColor='rgba(255, 255, 255, 0.1)'; this.style.transform='translateY(0)';">
+                <span style="font-size: 1.25rem;"></span>
+                <span>Upcoming Events</span>
+            </button>
+
+            <!-- Year End Countdown Box -->
+            <div id="countdownBox" class="btn" style="
+                width: 100%;
+                background: rgba(255, 255, 255, 0.03);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                border-radius: 16px;
+                padding: 1rem;
+                color: var(--text-main);
+                margin-bottom: 2rem; 
+                display: flex; 
+                flex-direction: column;
+                align-items: center; 
+                justify-content: center; 
+                gap: 0.5rem; 
+                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+                font-weight: 500;
+                letter-spacing: 0.5px;
+                box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+                cursor: default;
+            " onmouseover="this.style.background='rgba(255, 255, 255, 0.08)'; this.style.borderColor='rgba(255, 255, 255, 0.2)'; this.style.transform='translateY(-2px)';"
+                onmouseout="this.style.background='rgba(255, 255, 255, 0.03)'; this.style.borderColor='rgba(255, 255, 255, 0.1)'; this.style.transform='translateY(0)';">
+                <span
+                    style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); padding-bottom: 2px;">Year-End
+                    Countdown</span>
+                <div style="display: flex; gap: 0.5rem; align-items: center;">
+                    <span style="font-size: 1.25rem;"></span>
+                    <span id="countdownText" style="font-variant-numeric: tabular-nums;">Loading...</span>
+                </div>
+            </div>
+
+
+            <!-- Syllabus & Materials -->
+            <div class="glass-panel">
+                <h3>Syllabus & Materials</h3>
+                <div style="margin-top: 1rem;">
+
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <span>Syllabus</span>
+                            <span>▼</span>
+                        </div>
+                        <div class="accordion-content">
+                            <ul class="material-list">
+                                <li><a href="assets/Guide.pdf" target="_blank" class="material-link">📄 Syllabus
+                                        PDF</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <span>Subjects</span>
+                            <span>▼</span>
+                        </div>
+                        <div class="accordion-content">
+                            <div class="accordion-item">
+                                <div class="accordion-header">
+                                    <span>Information System</span>
+                                    <span>▼</span>
+                                </div>
+                                <div class="accordion-content">
+                                    <ul class="material-list">
+                                        <li><a href="notes.html" class="material-link">Notes</a></li>
+                                        <li><a href="passpapers.html" class="material-link">PassPapers</a></li>
+                                        <li><a href="https://drive.google.com/drive/folders/1evovv6PycihEillP4ZxXQhx1YQR98IzI"
+                                                class="material-link">Videos</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <div class="accordion-header">
+                                    <span>Software Engineering</span>
+                                    <span>▼</span>
+                                </div>
+                                <div class="accordion-content">
+                                    <ul class="material-list">
+                                        <li><a href="se-notes.html" class="material-link">Notes</a></li>
+                                        <li><a href="se-passpapers.html" class="material-link">PassPapers</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <div class="accordion-header">
+                                    <span>Data Science</span>
+                                    <span>▼</span>
+                                </div>
+                                <div class="accordion-content">
+                                    <ul class="material-list">
+                                        <li><a href="ds-notes.html" class="material-link">Notes</a></li>
+                                        <li><a href="ds-passpapers.html" class="material-link">PassPapers</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <span>Tools</span>
+                            <span>▼</span>
+                        </div>
+                        <div class="accordion-content">
+                            <ul class="material-list">
+                                <li><a href="image to pdg convertor/convert.html" target="_blank"
+                                        class="material-link">🔄 Image to PDF Converter</a></li>
+                                <li><a href="compiler/compiler.html" target="_blank" class="material-link">💻
+                                        Compiler</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </aside>
+
+        <!-- Research Section (Replaces Countdown) -->
+        <section class="research-zone glass-panel">
+            <h3 class="countdown-title">Research</h3>
+            <div class="research-grid">
+                <a href="https://www.perplexity.ai" target="_blank" class="research-item perplexity"
+                    aria-label="Perplexity">
+                    <svg viewBox="0 0 24 24" width="24" height="24">
+                        <path fill="currentColor"
+                            d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10zM12 4l6 2.25V12c0 4.5-6 7.5-6 7.5S6 16.5 6 12V6.25L12 4z" />
+                        <path fill="currentColor"
+                            d="M12 8a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-4 5.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm8 0a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3z" />
+                    </svg>
+                    <span>Perplexity</span>
+                </a>
+                <a href="https://chat.openai.com" target="_blank" class="research-item chatgpt" aria-label="ChatGPT">
+                    <svg viewBox="0 0 24 24" width="24" height="24">
+                        <path fill="currentColor"
+                            d="M22.2819 9.8211a5.9847 5.9847 0 0 0-.5157-4.9108 6.0462 6.0462 0 0 0-6.5098-2.9A6.0651 6.0651 0 0 0 4.9807 4.1818a5.9847 5.9847 0 0 0-3.9977 2.9 6.0462 6.0462 0 0 0 .7427 7.0966 5.98 5.98 0 0 0 .511 4.9107 6.0462 6.0462 0 0 0 6.5146 2.9001A5.9847 5.9847 0 0 0 13.2599 24a6.0557 6.0557 0 0 0 5.7718-4.2058 5.9894 5.9894 0 0 0 3.9977-2.9001 6.0557 6.0557 0 0 0-.7475-7.0729zm-9.022 12.6081a4.4755 4.4755 0 0 1-2.8764-1.0408l.1419-.0804 4.7783-2.7582a.7948.7948 0 0 0 .3927-.6813v-6.7369l2.02 1.1686a1.54 1.54 0 0 1 .8312 1.32v5.6373a4.5177 4.5177 0 0 1-5.2877 3.1717zm-4.241-1.3713l-.1419-.0805a4.4334 4.4334 0 0 1-1.9-4.2233h6.8628v-2.1896l-2-1.1685a1.54 1.54 0 0 1-.8312-1.32V6.663a4.5234 4.5234 0 0 1 2.316-1.5583 4.4755 4.4755 0 0 1 2.8765 1.0407l-.142.0805-4.7783 2.7582a.7948.7948 0 0 0-.3927.6813v6.7909L7.0294 17.5a1.54 1.54 0 0 1-.8312-1.32v-5.6373a4.5234 4.5234 0 0 1 2.8207-4.4334V8.307zM18.8003 5.3789a4.5177 4.5177 0 0 1 1.9 4.2233h-6.8628v2.1896l2.0001 1.1685a1.54 1.54 0 0 1 .8312 1.32v5.6033a4.5234 4.5234 0 0 1-2.316 1.5583 4.4755 4.4755 0 0 1-2.8764-1.0407l.1419-.0805 4.7783-2.7582a.7948.7948 0 0 0 .3927-.6813v-6.7909l2.02-1.1686a1.54 1.54 0 0 1 .8312-1.32V3.0645a4.5234 4.5234 0 0 1-2.8407 2.3144zM9.4297 9.8665a.7948.7948 0 0 0-.3927.6813v2.7582l-2.02-1.1686a1.54 1.54 0 0 1-.8312-1.32V5.1802a4.4812 4.4812 0 0 1 2.8765-1.0408 4.49 4.49 0 0 1 2.4116.6491l-.1419.0805-4.7784 2.7582zm3.3903 8.1633a.7948.7948 0 0 0 .3927-.6813v-2.7582l2.02 1.1686a1.54 1.54 0 0 1 .8312 1.32v5.6373a4.4812 4.4812 0 0 1-2.8765 1.0408 4.49 4.49 0 0 1-2.4116-.6491l.1419-.0805 4.7783-2.7582z" />
+                    </svg>
+                    <span>ChatGPT</span>
+                </a>
+                <a href="https://www.google.com" target="_blank" class="research-item google" aria-label="Google">
+                    <svg viewBox="0 0 24 24" width="24" height="24">
+                        <path fill="currentColor"
+                            d="M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .533 5.347.533 12S5.867 24 12.48 24c3.44 0 6.013-1.133 8.053-3.24 2.067-2.067 2.693-5.067 2.693-7.467 0-.76-.067-1.48-.173-2.053H12.48z" />
+                    </svg>
+                    <span>Google</span>
+                </a>
+                <a href="https://www.youtube.com" target="_blank" class="research-item youtube" aria-label="YouTube">
+                    <svg viewBox="0 0 24 24" width="24" height="24">
+                        <path fill="currentColor"
+                            d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                    </svg>
+                    <span>YouTube</span>
+                </a>
+                <a href="https://gemini.google.com" target="_blank" class="research-item gemini" aria-label="Gemini">
+                    <svg viewBox="0 0 24 24" width="24" height="24">
+                        <path fill="currentColor"
+                            d="M12 24c0-6.627-5.373-12-12-12 6.627 0 12-5.373 12-12 0 6.627 5.373 12 12 12-6.627 0-12 5.373-12 12z" />
+                    </svg>
+                    <span>Gemini</span>
+                </a>
+                <a href="https://grok.x.ai" target="_blank" class="research-item grok" aria-label="Grok">
+                    <svg viewBox="0 0 24 24" width="24" height="24">
+                        <path fill="currentColor"
+                            d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z" />
+                    </svg>
+                    <span>Grok</span>
+                </a>
+            </div>
+        </section>
+
+        <footer class="main-footer">
+            ACCADAMICS + MINIMALIST = ACADAMIST
+        </footer>
+
+
+
+        <!-- Full Screen Date Modal -->
+        <div id="dayModal" class="modal-overlay">
+            <div class="modal-content glass-panel">
+                <button class="close-modal" id="closeModal">&times;</button>
+                <h2 id="modalDate" class="modal-title">Date</h2>
+                <div id="modalEvents" class="modal-body">
+                    <!-- Events will be injected here -->
+                    <p class="empty-state">No events scheduled for this day.</p>
+                </div>
+                <button id="addEventBtn" class="btn btn-add-event">+ Add Event</button>
+            </div>
+        </div>
+
+        <!-- Add Event Modal -->
+        <div id="addEventModal" class="modal-overlay">
+            <div class="modal-content glass-panel" style="max-width: 500px;">
+                <button class="close-modal" id="closeAddEventModal">&times;</button>
+                <h2 class="modal-title">Add New Event</h2>
+
+                <div class="add-event-form">
+                    <div class="form-group">
+                        <label for="eventTitle">Event Name</label>
+                        <input type="text" id="eventTitle" placeholder="Enter event name" class="event-input">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Time</label>
+                        <div class="time-picker-container">
+                            <div class="time-picker-wheel-container">
+                                <div class="time-picker-wheel" id="hourWheel">
+                                    <!-- Hours will be generated by JS -->
+                                </div>
+                                <div class="time-picker-label">:</div>
+                                <div class="time-picker-wheel" id="minuteWheel">
+                                    <!-- Minutes will be generated by JS -->
+                                </div>
+                                <div class="time-picker-wheel" id="ampmWheel">
+                                    <!-- AM/PM will be generated by JS -->
+                                </div>
+                            </div>
+                            <div class="time-picker-selection-bar"></div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="eventDesc">Description (optional)</label>
+                        <textarea id="eventDesc" placeholder="Enter description" class="event-input"
+                            rows="3"></textarea>
+                    </div>
+
+                    <div class="form-actions">
+                        <button id="cancelEventBtn" class="btn btn-secondary">Cancel</button>
+                        <button id="saveEventBtn" class="btn">Save Event</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Upcoming Events Modal -->
+        <div id="upcomingEventsModal" class="modal-overlay">
+            <div class="modal-content glass-panel">
+                <button class="close-modal" id="closeUpcomingModal">&times;</button>
+                <h2 class="modal-title">Upcoming Events</h2>
+                <div id="upcomingEventsList" class="modal-body" style="overflow-y: auto; max-height: 60vh;">
+                    <!-- Events will be injected here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Socket.io Client Library -->
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="script.js"></script>
+</body>
+
+</html>
